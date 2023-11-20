@@ -1,0 +1,14 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var Autor_1 = require("./src/Autor");
+var Livro_1 = require("./src/Livro");
+var index_1 = require("./src/Biblioteca/index");
+var Usuario_1 = require("./src/Usuario");
+var autor1 = index_1.Biblioteca.adicionarAutor(new Autor_1.Autor(1, "Gabriel", new Date(10, 10, 1999), "Brasileiro"));
+var livro1 = index_1.Biblioteca.cadastrarLivro(new Livro_1.Livro(1, "Corrida assassina", autor1, "1988", "Suspense"));
+var livro2 = index_1.Biblioteca.cadastrarLivro(new Livro_1.Livro(2, "Jogos vorazes", autor1, "2003", "Terror"));
+var usuario = index_1.Biblioteca.adicionarUsuario(new Usuario_1.Usuario("Rafael"));
+var usuario2 = index_1.Biblioteca.adicionarUsuario(new Usuario_1.Usuario("Lucas"));
+index_1.Biblioteca.emprestarLivro(livro1.id, usuario);
+index_1.Biblioteca.emprestarLivro(livro2.id, usuario);
+index_1.Biblioteca.relatorio();
